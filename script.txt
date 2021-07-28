@@ -1,0 +1,12 @@
+# @author : microfat
+# @time   : 07/28/21 11:04:21
+# @File   : script.txt
+
+pip3 install --no-cache-dir -i https://pypi.tuna.tsinghua.edu.cn/simple -r requirements.txt
+
+python setup.py build_ext --inplace
+
+# win
+python setup_win.py build_ext --inplace
+
+pyinstaller -F -n xnf_plugin-1.0-win10-64-bit --hidden-import requests --hidden-import Crypto --hidden-import Crypto.Cipher --hidden-import Crypto.Cipher.AES --hidden-import Crypto.Util --hidden-import Crypto.Util.Padding --hidden-import Crypto.Util.Padding.unpad --hidden-import tqdm --hidden-import colorama main.py
